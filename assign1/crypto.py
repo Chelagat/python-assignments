@@ -4,8 +4,8 @@ File: crypto.py
 ---------------
 Assignment 1: Cryptography
 Course: CS 41
-Name: Norah Borus
-SUNet: nborus
+Name:<>
+SUNet: <>
 
 Replace this with a description of the program.
 """
@@ -15,51 +15,17 @@ ALPHA_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 # Caesar Cipher
 
 def encrypt_caesar(plaintext):
-	decrypted_text = ""
-	displacement = 3
-	for letter in plaintext:
-		index = ALPHA_UPPER.find(letter);
-		if index != -1:
-			decrypted_text += ALPHA_UPPER[(index + displacement) % 26]
-		else:
-			decrypted_text +=letter
-		
-	return decrypted_text
-
+	
 
 
 def decrypt_caesar(ciphertext):
-	encrypted_text = ""
-	displacement  = 3
-	for letter in ciphertext:
-		index = ALPHA_UPPER.find(letter);
-		if index != -1:
-			if index < displacement:
-				index+=26
-			encrypted_text += ALPHA_UPPER[index - displacement]
-		else:
-			encrypted_text +=letter
 	
-	return encrypted_text
 
 
 # Vigenere Cipher
 
 def encrypt_vigenere(plaintext, keyword):
-	index = 0
-	encrypted_text = ""
-	for char in plaintext:
-
-		keyChar = (keyword[index % len(keyword)])
-		val1 = ord(char)
-		val2 = ord(keyChar)
-		int_val = (val1 + val2 -65)
-		if int_val > 90:
-			int_val = int_val - 26	
-		letter = chr(int_val)
-		encrypted_text += letter
-		index += 1
-	return encrypted_text.upper()
+	
 
 def decrypt_vigenere(ciphertext, keyword):
 
